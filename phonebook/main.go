@@ -11,7 +11,7 @@ func main() {
 	fileReader := FileReader{}
 
 	pv := PhoneValidator{
-		Pattern: `\(\d{3}\) ?\d{3}-\d{4}`,
+		Pattern: `(\(?\d{3}\)?)[ \-\.]?\d{3}[ \-\.]?\d{4}`,
 	}
 
 	fileContent, err := fileReader.readFile("numbers.txt")
