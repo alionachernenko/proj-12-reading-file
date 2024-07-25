@@ -20,12 +20,8 @@ func main() {
 	fileReader := FileReader{}
 
 	wv := WordsValidator{
-		Pattern: ` [А-ЩЬЮЯҐЄІЇа-щьюяґєії]{5}я `,
+		Pattern: `(\s|\A)[А-ЩЬЮЯҐЄІЇа-щьюяґєії]{5}я`,
 	}
-
-	pattern := regexp.MustCompile(wv.Pattern)
-
-	pattern.FindAllString("Кішка кіт", -1)
 
 	fileContent, err := fileReader.readFile("text.txt")
 
